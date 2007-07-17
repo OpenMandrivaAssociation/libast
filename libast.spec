@@ -1,11 +1,13 @@
-%define	version	0.7
-%define release	%mkrel 2
+%define name		libast
+%define	version		0.7
+%define release		%mkrel 3
 
-%define major	2
-%define libname	%mklibname ast %{major}
+%define major		2
+%define libname		%mklibname ast %{major}
+%define develname	%mklibname ast -d
 
 Summary:	LibAST is the Library of Assorted Spiffy Things 
-Name:		libast
+Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 URL:		http://www.eterm.org/
@@ -21,11 +23,12 @@ Summary:	LibAST is the Library of Assorted Spiffy Things
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Development related files for LibAST
 Group:		Development/C
 Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{mklibname ast 2 -d}
 
 %description
 LibAST is the Library of Assorted Spiffy Things.  It contains various
@@ -39,7 +42,7 @@ handy routines and drop-in substitutes for some good-but-non-portable
 functions.  It currently has a built-in memory tracking subsystem as
 well as some debugging aids and other similar tools.
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 Install this package if you need to compile applications that needs
 %{name}.
 
@@ -69,7 +72,7 @@ rm -rf %{buildroot}
 %doc README 
 %{_libdir}/lib*.so.*
 
-%files  -n %{libname}-devel
+%files  -n %{develname}
 %defattr(-,root,root)
 %doc README
 %{_libdir}/lib*.a
