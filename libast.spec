@@ -12,6 +12,7 @@ Version:	%{version}
 Release:	%{release}
 URL:		http://www.eterm.org/
 Group:		System/Libraries
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	BSD
 Source:		%{name}-%{version}.tar.bz2
 BuildRequires:	imlib2-devel
