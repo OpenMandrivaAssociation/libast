@@ -6,7 +6,7 @@
 %define libname		%mklibname ast %{major}
 %define develname	%mklibname ast -d
 
-Summary:	LibAST is the Library of Assorted Spiffy Things 
+Summary:	Library of Assorted Spiffy Things 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
@@ -19,7 +19,7 @@ BuildRequires:	imlib2-devel
 BuildRequires:	pcre-devel libxt-devel
 
 %package -n	%{libname}
-Summary:	LibAST is the Library of Assorted Spiffy Things
+Summary:	Library of Assorted Spiffy Things
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
 
