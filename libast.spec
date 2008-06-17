@@ -1,6 +1,6 @@
 %define name		libast
 %define	version		0.7
-%define release		%mkrel 5
+%define release		%mkrel 6
 
 %define major		2
 %define libname		%mklibname ast %{major}
