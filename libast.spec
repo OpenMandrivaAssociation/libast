@@ -1,22 +1,19 @@
-%define name		libast
-%define	version		0.7
-%define release		%mkrel 9
-
 %define major		2
 %define libname		%mklibname ast %{major}
 %define develname	%mklibname ast -d
 
 Summary:	Library of Assorted Spiffy Things 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		libast
+Version:	0.7
+Release:	%mkrel 10
 URL:		http://www.eterm.org/
 Group:		System/Libraries
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	BSD
 Source:		%{name}-%{version}.tar.bz2
 BuildRequires:	imlib2-devel
-BuildRequires:	pcre-devel libxt-devel
+BuildRequires:	pcre-devel
+BuildRequires:	libxt-devel
 
 %package -n	%{libname}
 Summary:	Library of Assorted Spiffy Things
@@ -50,7 +47,7 @@ Install this package if you need to compile applications that needs
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --disable-static
 %make
 
 %install
@@ -79,7 +76,6 @@ rm -rf %{buildroot}
 %files  -n %{develname}
 %defattr(-,root,root)
 %doc README
-%{_libdir}/lib*.a
 %{_libdir}/lib*.la
 %{_libdir}/lib*.so
 %{_includedir}/*
