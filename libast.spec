@@ -5,7 +5,7 @@
 Summary:	Library of Assorted Spiffy Things 
 Name:		libast
 Version:	0.7
-Release:	%mkrel 10
+Release:	%mkrel 11
 URL:		http://www.eterm.org/
 Group:		System/Libraries
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
