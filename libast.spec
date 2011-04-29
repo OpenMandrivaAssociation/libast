@@ -54,7 +54,7 @@ Install this package if you need to compile applications that needs
 rm -rf %{buildroot}
 %makeinstall_std
 
-%multiarch_binaries %{buildroot}%{_bindir}/*-config
+%multiarch_binaries %{buildroot}%{_bindir}/libast-config
 %multiarch_includes %{buildroot}%{_includedir}/libast/sysdefs.h
 
 %clean
@@ -79,7 +79,7 @@ rm -rf %{buildroot}
 %{_libdir}/lib*.la
 %{_libdir}/lib*.so
 %{_includedir}/*
-%multiarch %{multiarch_includedir}/libast/sysdefs.h
+%{multiarch_includedir}/libast/sysdefs.h
 %{_datadir}/aclocal/*.m4
-%{_bindir}/*-config
-%multiarch %{multiarch_bindir}/*-config
+%{_bindir}/libast-config
+%{multiarch_bindir}/libast-config
