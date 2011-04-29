@@ -55,6 +55,7 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 %multiarch_binaries %{buildroot}%{_bindir}/libast-config
+
 %multiarch_includes %{buildroot}%{_includedir}/libast/sysdefs.h
 
 %clean
