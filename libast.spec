@@ -5,7 +5,7 @@
 Summary:	Library of Assorted Spiffy Things 
 Name:		libast
 Version:	0.7
-Release:	%mkrel 12
+Release:	%mkrel 13
 URL:		http://www.eterm.org/
 Group:		System/Libraries
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -57,6 +57,10 @@ rm -rf %{buildroot}
 %multiarch_binaries %{buildroot}%{_bindir}/libast-config
 
 %multiarch_includes %{buildroot}%{_includedir}/libast/sysdefs.h
+
+%if "%{_lib}" == "lib64"
+perl -pi -e "s|-L/usr/lib\b|-L%{_libdir}|g" %{buildroot}%{_libdir}/*.la
+%endif
 
 %clean
 rm -rf %{buildroot}
