@@ -2,13 +2,12 @@
 %define libname		%mklibname ast %{major}
 %define develname	%mklibname ast -d
 
-Summary:	Library of Assorted Spiffy Things 
+Summary:	Library of Assorted Spiffy Things
 Name:		libast
 Version:	0.7
-Release:	%mkrel 14
+Release:	15
 URL:		http://www.eterm.org/
 Group:		System/Libraries
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	BSD
 Source:		%{name}-%{version}.tar.bz2
 BuildRequires:	imlib2-devel
@@ -58,30 +57,14 @@ rm -rf %{buildroot}
 
 %multiarch_includes %{buildroot}%{_includedir}/libast/sysdefs.h
 
-%if "%{_lib}" == "lib64"
-perl -pi -e "s|-L/usr/lib\b|-L%{_libdir}|g" %{buildroot}%{_libdir}/*.la
-%endif
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
+rm -f %{buildroot}%{_libdir}/*.*a
 
 %files -n %{libname}
-%defattr(-,root,root)
-%doc README 
-%{_libdir}/lib*.so.*
+%doc README
+%{_libdir}/lib*.so.%{major}*
 
 %files  -n %{develname}
-%defattr(-,root,root)
 %doc README
-%{_libdir}/lib*.la
 %{_libdir}/lib*.so
 %{_includedir}/*
 %{multiarch_includedir}/libast/sysdefs.h
