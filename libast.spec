@@ -67,7 +67,7 @@ rm -f %{buildroot}%{_libdir}/*.*a
 %doc README
 %{_libdir}/lib*.so
 %{_includedir}/*
-%{multiarch_includedir}/libast/sysdefs.h
+#%{multiarch_includedir}/libast/sysdefs.h
 %{_datadir}/aclocal/*.m4
 %{_bindir}/libast-config
 %{multiarch_bindir}/libast-config
