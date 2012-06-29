@@ -5,11 +5,11 @@
 Summary:	Library of Assorted Spiffy Things
 Name:		libast
 Version:	0.7
-Release:	15
+Release:	16
 URL:		http://www.eterm.org/
 Group:		System/Libraries
 License:	BSD
-Source:		%{name}-%{version}.tar.bz2
+Source0:	http://www.eterm.org/download/%{name}-%{version}.tar.gz
 BuildRequires:	imlib2-devel
 BuildRequires:	pcre-devel
 BuildRequires:	libxt-devel
