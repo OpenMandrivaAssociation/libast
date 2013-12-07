@@ -5,7 +5,7 @@
 Summary:	Library of Assorted Spiffy Things
 Name:		libast
 Version:	0.7
-Release:	18
+Release:	19
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.eterm.org/
