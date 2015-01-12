@@ -45,8 +45,8 @@ Install this package if you need to compile applications that needs
 %setup -q
 
 %build
-%configure2_5x --disable-static
-%make
+%configure
+%make LIBS='-lX11 -lpcre'
 
 %install
 %makeinstall_std
