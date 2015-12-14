@@ -1,6 +1,7 @@
 %define major	2
 %define libname	%mklibname ast %{major}
 %define devname	%mklibname ast -d
+%define _disable_lto 1
 
 Summary:	Library of Assorted Spiffy Things
 Name:		libast
