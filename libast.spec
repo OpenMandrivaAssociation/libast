@@ -43,21 +43,16 @@ Install this package if you need to compile applications that needs
 %{name}.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure
-%make LIBS='-lX11 -lpcre'
+%make_build LIBS='-lX11 -lpcre'
 
 %install
-%makeinstall_std
-
-%multiarch_binaries %{buildroot}%{_bindir}/libast-config
-
-%multiarch_includes %{buildroot}%{_includedir}/libast/sysdefs.h
+%make_install
 
 %files -n %{libname}
-%doc README
 %{_libdir}/libast.so.%{major}*
 
 %files  -n %{devname}
@@ -66,5 +61,4 @@ Install this package if you need to compile applications that needs
 %{_includedir}/*
 %{_datadir}/aclocal/*.m4
 %{_bindir}/libast-config
-%{multiarch_bindir}/libast-config
 
