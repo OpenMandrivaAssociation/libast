@@ -46,6 +46,7 @@ Install this package if you need to compile applications that needs
 %autosetup -p1
 
 %build
+autoreconf -fvi
 %configure
 %make_build LIBS='-lX11 -lpcre'
 
