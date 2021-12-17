@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 %define major	2
 %define libname	%mklibname ast %{major}
 %define devname	%mklibname ast -d
@@ -5,12 +7,12 @@
 
 Summary:	Library of Assorted Spiffy Things
 Name:		libast
-Version:	0.7
-Release:	26
+Version:	0.8
+Release:	1
 Group:		System/Libraries
 License:	BSD
 Url:		http://www.eterm.org/
-Source0:	http://www.eterm.org/download/%{name}-%{version}.tar.gz
+Source0:	https://github.com/mej/libast/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(libpcre)
 BuildRequires:	pkgconfig(xt)
@@ -46,6 +48,7 @@ Install this package if you need to compile applications that needs
 %autosetup -p1
 
 %build
+autoreconf -fvi
 %configure
 %make_build LIBS='-lX11 -lpcre'
 
