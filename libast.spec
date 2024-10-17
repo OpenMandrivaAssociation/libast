@@ -11,7 +11,7 @@ Version:	0.8
 Release:	2
 Group:		System/Libraries
 License:	BSD
-Url:		http://www.eterm.org/
+Url:		https://www.eterm.org/
 Source0:	https://github.com/mej/libast/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(libpcre)
