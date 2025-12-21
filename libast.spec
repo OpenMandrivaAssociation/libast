@@ -13,6 +13,11 @@ Group:		System/Libraries
 License:	BSD
 Url:		https://www.eterm.org/
 Source0:	https://github.com/mej/libast/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(libpcre)
 BuildRequires:	pkgconfig(xt)
